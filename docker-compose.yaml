@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  dev:
+    image: docker-ubuntu-dev-ssh_dev:latest
+    build:
+      context: .
+    ports:
+      - "20122:22"
+    volumes:
+      - ./workspace:/home/dev/workspace
+      - ./nvim:/home/dev/.config/nvim
+    command: bash -c "mkdir -p /home/dev/.cache/dein && mkdir -p /home/dev/.config && chown -R dev:dev /home/dev && /usr/sbin/sshd -D"

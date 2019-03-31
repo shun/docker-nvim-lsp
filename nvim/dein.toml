@@ -1,0 +1,28 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+depends = ['deoplete.nvim']
+build = 'bash install.sh'
+hook_add = '''
+set hidden
+let g:LanguageClient_serverCommands = {
+      \ 'cpp': ['clangd-7'],
+      \ }
+let g:LanguageClient_loadSettings = 1
+let g:LanguageClient_hasSnippetSupport = 0
+
+set completefunc=LanguageClient#complete
+
+nnoremap K :call LanguageClient#textDocument_hover()<CR>
+nnoremap F :call LanguageClient#textDocument_formatting()<CR>
+'''
+
