@@ -12,13 +12,13 @@ if dein#load_state('/home/dev/./.cache/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/dev/./.cache/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/dev/./.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
-  call dein#load_toml("~/.cache/nvim/dein.toml", {"lazy":0})
+  call dein#load_toml("~/.config/nvim/dein.toml", {"lazy":0})
 
   " Required:
   call dein#end()

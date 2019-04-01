@@ -26,3 +26,5 @@ nnoremap K :call LanguageClient#textDocument_hover()<CR>
 nnoremap F :call LanguageClient#textDocument_formatting()<CR>
 '''
 
+[[plugins]]
+repo = 'sakhnik/nvim-gdb'

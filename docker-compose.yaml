@@ -11,3 +11,4 @@ services:
       - ./workspace:/home/dev/workspace
       - ./nvim:/home/dev/.config/nvim
     command: bash -c "mkdir -p /home/dev/.cache/dein && mkdir -p /home/dev/.config && chown -R dev:dev /home/dev && /usr/sbin/sshd -D"
+    privileged: true
